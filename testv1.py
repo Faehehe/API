@@ -11,9 +11,9 @@ class AutocompleteExtractor:
         self.discovered_names = set()
         self.request_count = 0
         self.start_time = time.time()
-        self.rate_limit_delay = 0.6  # Initial delay between requests (seconds)
-        self.retry_delay = 1.0  # Initial retry delay for rate limiting (seconds)
-        self.max_retries = 5  # Maximum number of retries for a request
+        self.rate_limit_delay = 0.6  
+        self.retry_delay = 1.0  
+        self.max_retries = 5  
     
     def delay(self, seconds):
         time.sleep(seconds)
@@ -117,8 +117,7 @@ class AutocompleteExtractor:
         print(f"Total requests made: {self.request_count}")
         print(f"Time elapsed: {elapsed:.2f} seconds")
         print(f"Request rate: {self.request_count / elapsed:.2f} requests/second")
-    
-# Main function to run the extraction
+
 def main():
     extractor = AutocompleteExtractor()
     if extractor.test_endpoint():
